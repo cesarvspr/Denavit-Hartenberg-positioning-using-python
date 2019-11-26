@@ -7,6 +7,13 @@ def print_matrix(result):
 
 def multiply(X, Y):
     # iterate through rows of X
+
+    result = [[0,0,0,0],
+    [0 ,0,0,0],
+    [0 ,0,0,0 ],
+    [0 ,0,0,0 ]]
+    # result is 4x4
+
     for i in range(len(X)):
     # iterate through columns of Y
         for j in range(len(Y[0])):
@@ -27,40 +34,31 @@ def matriz_transfromacao(a , d , alfa, teta):
 
 #insira os parametros 
 
-#a
+#1
 a_um = 0
-a_dois = 1 
-a_tres = 1 
-
-#deslocamento
 d_um = 200
-d_dois = 1 
-d_tres = 1 
-
-#alfa
-alfa_um = 0 
-alfa_dois = 1
-alfa_tres = 1 
-
-#teta
 teta_um = 0
+alfa_um = 0
+
+#2
+a_dois = 1 
+d_dois = 1
+alfa_dois = -90
 teta_dois = 1
-teta_tres = 1 
-#matriz_transfromacao(a , d , alfa, teta
+
+#3
+a_tres = 1 
+d_tres = 1 
+alfa_tres = 1 
+teta_tres = 1
+
+
+#matriz_transfromacao(a , d , alfa, teta)
 
 A0_1 = matriz_transfromacao(a_um ,d_um ,alfa_um,teta_um)
-print_matrix(A0_1)
 A1_2 = matriz_transfromacao(a_dois ,d_dois ,alfa_dois,teta_dois)
+print_matrix(A1_2)
 A2_3 = matriz_transfromacao(a_tres ,d_tres, alfa_tres, teta_tres)
-
-# Program to multiply two matrices using nested loops
-
-# result is 4x4
-result = [[0,0,0,0],
-    [0 ,0,0,0],
-    [0 ,0,0,0 ],
-    [0 ,0,0,0 ]]
-
 
 
 A0_2 = multiply( A0_1, A1_2)
