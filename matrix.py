@@ -40,7 +40,7 @@ d_um = 200
 teta_um = 0
 alfa_um = 0
 
-#2
+#2  
 a_dois = 1 
 d_dois = 1
 alfa_dois = -90
@@ -57,12 +57,24 @@ teta_tres = 1
 
 A0_1 = matriz_transfromacao(a_um ,d_um ,alfa_um,teta_um)
 A1_2 = matriz_transfromacao(a_dois ,d_dois ,alfa_dois,teta_dois)
-print_matrix(A1_2)
 A2_3 = matriz_transfromacao(a_tres ,d_tres, alfa_tres, teta_tres)
 
+#resultados
+print('')
+print("PARA A0_1 TEMOS: ")
+A0_1 = A0_1
+print_matrix(A0_1)
+print('')
 
+print("PARA A0_2 TEMOS: ")
 A0_2 = multiply( A0_1, A1_2)
-#A0_3 = multiply(A1_2, A2_3)
+print_matrix(A0_2)
+print('')
+
+print("PARA A0_3 TEMOS: ")
+A0_3 = multiply(multiply(A0_1, A1_2), A2_3)
+print_matrix(A0_3)
+print('')
 
 
    
