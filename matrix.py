@@ -23,11 +23,11 @@ def multiply(X, Y):
     return result
 
 def matriz_transfromacao(a , d , alfa, teta):
-    M = [[math.cos(teta),-math.sin(teta)*math.cos(alfa), math.sin(teta)*math.sin(alfa), a*math.cos(teta)],
+    M = [[math.cos(math.radians(teta)),-math.sin(math.radians(teta))*math.cos(math.radians(alfa)), math.sin(math.radians(teta))*math.sin(math.radians(alfa)), a*math.cos(math.radians(teta))],
 
-    [math.sin(teta) , math.cos(teta)*math.cos(alfa), -math.cos(teta)*math.sin(alfa), a*math.sin(teta)],
+    [math.sin(math.radians(teta)) , math.cos(math.radians(teta))*math.cos(math.radians(alfa)), -math.cos(math.radians(teta))*math.sin(math.radians(alfa)), a*math.sin(math.radians(teta))],
 
-    [0 , math.sin(alfa), math.cos(alfa), d ],
+    [0 , math.sin(math.radians(alfa)), math.cos(math.radians(alfa)), d ],
     
     [0,0,0,1]]
     return M
@@ -35,22 +35,22 @@ def matriz_transfromacao(a , d , alfa, teta):
 #insira os parametros 
 
 #1
-a_um = 0
-d_um = 200
-teta_um = 0
+a_um = 200
+d_um = 0
+teta_um = 135
 alfa_um = 0
 
 #2  
-a_dois = 1 
-d_dois = 1
-alfa_dois = -90
-teta_dois = 1
+a_dois = 300
+d_dois = 0
+alfa_dois = 0
+teta_dois = -90
 
 #3
-a_tres = 1 
-d_tres = 1 
-alfa_tres = 1 
-teta_tres = 1
+a_tres = 0
+d_tres = 0 
+alfa_tres = 0 
+teta_tres = 0
 
 
 #matriz_transfromacao(a , d , alfa, teta)
@@ -60,10 +60,16 @@ A1_2 = matriz_transfromacao(a_dois ,d_dois ,alfa_dois,teta_dois)
 A2_3 = matriz_transfromacao(a_tres ,d_tres, alfa_tres, teta_tres)
 
 #resultados
+
 print('')
 print("PARA A0_1 TEMOS: ")
 A0_1 = A0_1
 print_matrix(A0_1)
+print('')
+
+print("PARA A1_2 TEMOS: ")
+
+print_matrix(A1_2)
 print('')
 
 print("PARA A0_2 TEMOS: ")
@@ -71,10 +77,7 @@ A0_2 = multiply( A0_1, A1_2)
 print_matrix(A0_2)
 print('')
 
-print("PARA A0_3 TEMOS: ")
-A0_3 = multiply(multiply(A0_1, A1_2), A2_3)
-print_matrix(A0_3)
-print('')
 
 
-   
+
+
