@@ -1,10 +1,14 @@
+#Open lincense, code made by César Sampaio 
+
+
 import math
 
-
+#This prinTs the matrix
 def print_matrix(result):
     for r in result:
          print(r)
 
+#Multiply the matrix
 def multiply(X, Y):
     # iterate through rows of X
 
@@ -22,6 +26,9 @@ def multiply(X, Y):
                 result[i][j] += X[i][k] * Y[k][j]
     return result
 
+
+#This returns the transformation matrix
+
 def matriz_transfromacao(a , d , alfa, teta):
     M = [[math.cos(math.radians(teta)),-math.sin(math.radians(teta))*math.cos(math.radians(alfa)), math.sin(math.radians(teta))*math.sin(math.radians(alfa)), a*math.cos(math.radians(teta))],
 
@@ -31,8 +38,10 @@ def matriz_transfromacao(a , d , alfa, teta):
     
     [0,0,0,1]]
     return M
+    #PAY ATTENTION, THIS FUNCTIONS RETURNS SMALL NUMBERS THAT YOUR CAN CONSIDER ZERO DENPENDIG THE CONTEXT. 
 
-#insira os parametros 
+#Parameters inserting
+#Insira os parametros 
 
 #1
 a_um = 200
@@ -53,22 +62,24 @@ alfa_tres = 0
 teta_tres = 0
 
 
-#matriz_transfromacao(a , d , alfa, teta)
+#Matriz_transfromacao(a , d , alfa, teta)
+#Transformation matrix(a, d, alfa, theta)
 
 A0_1 = matriz_transfromacao(a_um ,d_um ,alfa_um,teta_um)
 A1_2 = matriz_transfromacao(a_dois ,d_dois ,alfa_dois,teta_dois)
 A2_3 = matriz_transfromacao(a_tres ,d_tres, alfa_tres, teta_tres)
 
-#resultados
+#Results
+#Resultados
 
 print('')
 print("PARA A0_1 TEMOS: ")
-A0_1 = A0_1
 print_matrix(A0_1)
 print('')
 
-print("PARA A1_2 TEMOS: ")
 
+
+print("PARA A1_2 TEMOS: ")
 print_matrix(A1_2)
 print('')
 
